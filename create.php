@@ -2,12 +2,12 @@
 require "connection.php";
 
 if (isset($_POST['submit'])) {
-    $pruts_name = $_POST['pruts_name'];
+    $fruit_name = $_POST['fruit_name'];
     $quantity = $_POST['quantity'];
     $unit_id = $_POST['unit_id'];
 
 
-    $sql = "INSERT INTO pruts SET pruts_name ='$pruts_name', quantity = '$quantity', unit_id = '$unit_id'";
+    $sql = "INSERT INTO fruit SET fruit_name ='$fruit_name', quantity = '$quantity', unit_id = '$unit_id'";
 
     $result = mysqli_query($connection, $sql) or trigger_error("Failed SQL" . mysqli_error($connection), E_USER_ERROR);
 

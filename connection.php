@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "prutsdb";
+$db = "fruits-db";
 $port = 3307;
 $connection = mysqli_connect($host, $user, $password, $db, $port);
 

@@ -22,21 +22,20 @@
     </div>
     <hr>
     <?php require "connection.php";
-    if (isset($_POST['pruts_id'])) {
+    if (isset($_POST['fruit_id'])) {
 
-        $pruts_id = $_POST['pruts_id'];
-        $sql = "SELECT * FROM pruts where pruts_id = '$pruts_id' ";
+        $fruit_id = $_POST['fruit_id'];
+        $sql = "SELECT * FROM fruit where pruts_id = '$fruit_id' ";
         $result = mysqli_query($connection, $sql) or trigger_error("Failed SQL" . mysqli_error($connection), E_USER_ERROR);
         $row = mysqli_fetch_assoc($result);
     }
     if (isset($_POST['update'])) {
-        $pruts_id = $_POST['pruts_id'];
-        $pruts_name = $_POST['pruts_name'];
+        $fruit_id = $_POST['fruit_id'];
+        $fruit_name = $_POST['fruit_name'];
         $quantity = $_POST['quantity'];
         $unit_id = $_POST['unit_id'];
-        // $unit_name = $_POST['unit_name'];
 
-        $sql = "UPDATE pruts SET pruts_name = '$pruts_name', quantity = '$quantity', unit_id = '$unit_id' WHERE pruts_id = '$pruts_id' ";
+        $sql = "UPDATE pruts SET pruts_name = '$fruit_name', quantity = '$quantity', unit_id = '$unit_id' WHERE pruts_id = '$fruit_id' ";
         $result = mysqli_query($connection, $sql) or trigger_error("Failed SQL" . mysqli_error($connection), E_USER_ERROR);
 
         echo "<script>  window.location.href = 'index.php'; alert('success!');</script>";
@@ -45,12 +44,12 @@
     <h3 class="text-center mt-5">Update User</h3>
     <form action="update.php" method="post" class="w-50 mx-auto border border-2 border p-3 mt-4">
         <div class="mb-3">
-            <label for="pruts_id" class="form-label">Pruts Id</label>
-            <input type="text" name="pruts_id" id="pruts_id" class="form-control" value="<?php echo $row['pruts_id'] ?>" readonly>
+            <label for="fruit_id" class="form-label">Fruits Id</label>
+            <input type="text" name="fruit_id" id="fruit_id" class="form-control" value="<?php echo $row['fruit_id'] ?>" readonly>
         </div>
         <div class="mb-3">
-            <label for="pruts_name" class="form-label">Pruts Name</label>
-            <input type="text" name="pruts_name" id="pruts_name" class="form-control" value="<?php echo $row['pruts_name'] ?>">
+            <label for="pruts_name" class="form-label">Fruits Name</label>
+            <input type="text" name="fruit_name" id="fruit_name" class="form-control" value="<?php echo $row['fruit_name'] ?>">
         </div>
         <div class="mb-3">
             <label for="quantity" class="form-label">Quantity</label>

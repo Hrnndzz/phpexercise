@@ -1,4 +1,4 @@
-let str = "KENNETH HERNANdez";
+let str = "KENNETH HERNANDEZ";
 
 function countVWL(str) {
     let counter = 0;

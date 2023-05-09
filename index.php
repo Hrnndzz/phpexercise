@@ -28,8 +28,8 @@ $result = mysqli_query($connection, $sql);
     <hr>
     <form action="create.php" method="post" class="w-50 mx-auto border border-2 p-3 my-5">
         <div class="mb-3">
-            <label for="pruts_name" class="form-label">Fruit</label>
-            <input type="text" name="pruts_name" class="form-control" id="pruts_name">
+            <label for="fruit_name" class="form-label">Fruit</label>
+            <input type="text" name="fruit_name" class="form-control" id="fruit_name">
         </div>
 
         <div class="mb-3">
@@ -53,8 +53,8 @@ $result = mysqli_query($connection, $sql);
     <table class="table table-striped table-dark w-75 mx-auto table-bordered border my-5">
         <thead>
             <tr>
-                <th scope="col"><a href="?column=pruts_id&sort=<?php echo $sort ?>">Fruit id</a></th>
-                <th scope="col"><a href="?column=pruts_name&sort=<?php echo $sort ?>">Fruit</a></th>
+                <th scope="col"><a href="?column=fruit_id&sort=<?php echo $sort ?>">Fruit id</a></th>
+                <th scope="col"><a href="?column=fruit_name&sort=<?php echo $sort ?>">Fruit</a></th>
                 <th scope="col"><a href="?column=quantity&sort=<?php echo $sort ?>">Quantity</a></th>
                 <th scope="col"><a href="?column=unit_name&sort=<?php echo $sort ?>">Unit</a></th>
                 <th scope="col" class="text-center">Action</th>
@@ -66,19 +66,19 @@ $result = mysqli_query($connection, $sql);
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <tr>
-                    <td><?php echo $row['pruts_id'] ?></td>
-                    <td><?php echo $row['pruts_name'] ?></td>
+                    <td><?php echo $row['fruit_id'] ?></td>
+                    <td><?php echo $row['fruit_name'] ?></td>
                     <td><?php echo $row['quantity'] ?></td>
                     <td><?php echo $row['unit_name'] ?></td>
                     <td class="d-flex justify-content-around">
                         <form action="update.php" method="POST">
                             <input type="submit" name="submit" id="submit" value="Update" class="btn btn-outline-primary">
-                            <input type="hidden" name="pruts_id" id="pruts_id" value="<?php echo $row['pruts_id'] ?>">
+                            <input type="hidden" name="fruit_id" id="fruit_id" value="<?php echo $row['fruit_id'] ?>">
                         </form>
                         <form action="delete.php" method="POST">
 
-                            <input type="submit" name="delete" id="delete" value="Delete" class="btn btn-outline-danger" onclick="return confirm('You are deleting a prut, continue?')">
-                            <input type="hidden" name="pruts_id" id="pruts_id" value="<?php echo $row['pruts_id'] ?>">
+                            <input type="submit" name="delete" id="delete" value="Delete" class="btn btn-outline-danger" onclick="return confirm('You are deleting a fruit, continue?')">
+                            <input type="hidden" name="fruit_id" id="fruit_id" value="<?php echo $row['fruit_id'] ?>">
 
                         </form>
                     </td>
